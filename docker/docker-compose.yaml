@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  mitm-proxy:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8080:8080"
+      - "8000:8000"
+    container_name: mitm-proxy-python
+    restart: on-failure
+    volumes:
+      - ../ca.key:/app/ca.key
+      - ../ca.crt:/app/ca.crt
+      - ../cert.key:/app/cert.key
