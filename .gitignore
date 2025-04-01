@@ -12,3 +12,4 @@ certs/
 venv/
 .DS_Store
 /bin
+bin/
